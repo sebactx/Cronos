@@ -16,7 +16,6 @@ A solução é composta de 3 projetos, todos desenvolvidos com a versão 6.0, th
 ✦ Projeto Cronos.Console => Testes automáticos em aplicativo console.
 
 Foi desenvolvida com o Visual Studio 2022. Pode ser aberta com duplo clique no arquivo CronosCase.slh.
-Cada projeto tem sua pasta de deploy, respectivamente Deploy, DeployTest e DeployConsole.
 
 Os testes automáticos podem ser executados pela execução do Cronos.Console ou pelo Visual Studio, a partir do Test Explorer.
 
@@ -32,5 +31,5 @@ OPCIONAIS BACK-END
 5. Autenticação de administrador para gerenciamento do conteúdo => Em desenvolvimento
 6. Documentação da API => Autodoumentada
 7. Testes automatizados => ptojetos Cronos.Console e Cronos.UnitTests
-8. Deploy da aplicação => Nas pastas Deploy (api), DeployTest e DeployConsole.
+8. Deploy da aplicação => Nas pastas Deploy (api) e DeployConsole.
 
