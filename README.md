@@ -32,4 +32,7 @@ OPCIONAIS BACK-END
 6. Documentação da API => Autodoumentada
 7. Testes automatizados => ptojetos Cronos.Console e Cronos.UnitTests
 8. Deploy da aplicação => Nas pastas Deploy (api) e DeployConsole.
+9. Deploy no Docker => https://registry.hub.docker.com/scartaxo
+
+
 
