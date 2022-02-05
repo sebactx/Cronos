@@ -11,12 +11,14 @@ namespace Cronos.Api.Data
         public DbSet<TeamMember>? TeamMembers { get; set; }
         public DbSet<Service>? Services { get; set; }
         public DbSet<Post>? Posts { get; set; }
+        public DbSet<AdminUser>? Admins { get; set; }
 
         public ApiContext()
         {
             SeedTeamMember.Load(this);
             SeedService.Load(this);
             SeedPost.Load(this);
+            SeedAdmin.Load(this);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -44,6 +46,13 @@ namespace Cronos.Api.Data
                 return new List<Post>();
             await Task.Delay(1);
             return Posts.Local.ToList<Post>();
+        }
+        public async Task<List<AdminUser>> GetAdmins()
+        {
+            if (Admins == null)
+                return new List<AdminUser>();
+            await Task.Delay(1);
+            return Admins.Local.ToList<AdminUser>();
         }
     }
 }

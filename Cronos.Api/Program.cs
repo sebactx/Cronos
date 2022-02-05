@@ -1,4 +1,5 @@
 var builder = WebApplication.CreateBuilder(args);
+ConfigurationManager configuration = builder.Configuration;
 
 // Add services to the container.
 builder.Services.AddDbContext<Cronos.Api.Data.ApiContext>();
