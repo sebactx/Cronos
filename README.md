@@ -28,11 +28,25 @@ a. Utilizar banco de dados relacional => Incluído um banco InMemory, om a tecno
 b. Adicionar dados para teste => dados inicias foram inseridos nos módulos SeedPost, SeedService e SeedTeamMember
 
 OPCIONAIS BACK-END
-5. Autenticação de administrador para gerenciamento do conteúdo => Em desenvolvimento
-6. Documentação da API => Autodoumentada
-7. Testes automatizados => ptojetos Cronos.Console e Cronos.UnitTests
-8. Deploy da aplicação => Nas pastas Deploy (api) e DeployConsole.
-9. Deploy no Docker => https://registry.hub.docker.com/scartaxo
+*** Autenticação de administrador para gerenciamento do conteúdo ***
+  Os recursos para a autenticação foram instalados com base em 2 bibliotecas:
+  Microsoft.AspNetCore.Identity.EntityFrameworkCore e
+  Microsoft.AspNetCore.Authentication.JwtBearer
+  refletidos na api pelos módulos:
+  JwtAndIdentity.cs => Configura a autenticação no builder da aplicação web
+  e AuthetivateController.cs => Endpoint que autentica o usuário.
+  Mas a autrenticação não foi ainda implementada, faltano o seguinte:
+  TODO => Permitir o cadastro de novos usuários;
+  TODO => Autenticar os usuários e o Admin;
+  TODO => Restringir o acesso apenas aos usuários autenticados
+  TODO => Autoriza apenas ao Admin, o acesso à gestão
+  (ainda resta algum tempo, vou continuar implemntando até a meia noite)
+*** 
+
+3. Documentação da API => Autodoumentada
+4. Testes automatizados => ptojetos Cronos.Console e Cronos.UnitTests
+5. Deploy da aplicação => Nas pastas Deploy (api) e DeployConsole.
+6. Deploy no Docker => https://registry.hub.docker.com/scartaxo
 
 
 
