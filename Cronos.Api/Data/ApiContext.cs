@@ -11,14 +11,12 @@ namespace Cronos.Api.Data
         public DbSet<TeamMember>? TeamMembers { get; set; }
         public DbSet<Service>? Services { get; set; }
         public DbSet<Post>? Posts { get; set; }
-        public DbSet<Category>? Categories { get; set; }
 
         public ApiContext()
         {
             SeedTeamMember.Load(this);
             SeedService.Load(this);
             SeedPost.Load(this);
-            LoadCategories();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -46,23 +44,6 @@ namespace Cronos.Api.Data
                 return new List<Post>();
             await Task.Delay(1);
             return Posts.Local.ToList<Post>();
-        }
-        public void LoadCategories()
-        {
-            if (Categories == null)
-                return;
-            Category category = new Category() { CategoryName = "Category1" };
-            Categories.Add(category);
-            category = new Category() { CategoryName = "Category2" };
-            Categories.Add(category);
-        }
-
-        public async Task<List<Category>> GetCategories()
-        {
-            if (Categories == null)
-                return new List<Category>();
-            await Task.Delay(1);
-            return Categories.Local.ToList<Category>();
         }
     }
 }
