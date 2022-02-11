@@ -46,7 +46,9 @@ OPCIONAIS BACK-END
 3. Documentação da API => Autodoumentada
 4. Testes automatizados => ptojetos Cronos.Console e Cronos.UnitTests
 5. Deploy da aplicação => Nas pastas Deploy (api) e DeployConsole.
-6. Deploy no Docker => https://registry.hub.docker.com/scartaxo
+6. Deploy no Docker => https://hub.docker.com/r/scartaxo/cronosapi
+
+
 
 
 
