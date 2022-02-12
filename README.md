@@ -35,15 +35,11 @@ OPCIONAIS BACK-END
   refletidos na api pelos módulos:
   JwtAndIdentity.cs => Configura a autenticação no builder da aplicação web
   e AuthetivateController.cs => Endpoint que autentica o usuário.
-  Mas a autrenticação não foi ainda implementada, faltano o seguinte:
-  TODO => Permitir o cadastro de novos usuários;
-  TODO => Autenticar os usuários e o Admin;
-  TODO => Restringir o acesso apenas aos usuários autenticados
-  TODO => Autoriza apenas ao Admin, o acesso à gestão
-  (ainda resta algum tempo, vou continuar implemntando até a meia noite)
+  Uma simulação da autenticação e das autorizações subsequentes foi 
+  incorporada ao códigop, mas mantida em uma branch separada, a Cronos2.
 *** 
 
-3. Documentação da API => Autodoumentada
+3. Documentação da API => O código seguiu os padrões de programação mais usados. É facilmente legível por desenvolvedores.
 4. Testes automatizados => ptojetos Cronos.Console e Cronos.UnitTests
 5. Deploy da aplicação => Nas pastas Deploy (api) e DeployConsole.
 6. Deploy no Docker => https://hub.docker.com/r/scartaxo/cronosapi
