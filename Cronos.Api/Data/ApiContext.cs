@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore.InMemory;
 using System.Collections.Generic;
 using System.Linq;
 using Cronos.Api.Model;
+using Microsoft.AspNetCore.Identity;
 
 namespace Cronos.Api.Data
 {
@@ -11,14 +12,19 @@ namespace Cronos.Api.Data
         public DbSet<TeamMember>? TeamMembers { get; set; }
         public DbSet<Service>? Services { get; set; }
         public DbSet<Post>? Posts { get; set; }
-        public DbSet<AdminUser>? Admins { get; set; }
+        public DbSet<IdentityUser>? Admins { get; set; }
 
         public ApiContext()
         {
             SeedTeamMember.Load(this);
             SeedService.Load(this);
             SeedPost.Load(this);
-            SeedAdmin.Load(this);
+            if  (Admins != null)
+                Admins.Add(new IdentityUser()
+                {
+                    UserName = "admin",
+                    SecurityStamp = Guid.NewGuid().ToString()
+                });
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -47,12 +53,11 @@ namespace Cronos.Api.Data
             await Task.Delay(1);
             return Posts.Local.ToList<Post>();
         }
-        public async Task<List<AdminUser>> GetAdmins()
+        public List<IdentityUser> GetAdmins()
         {
             if (Admins == null)
-                return new List<AdminUser>();
-            await Task.Delay(1);
-            return Admins.Local.ToList<AdminUser>();
+                return new List<IdentityUser>();
+            return Admins.Local.ToList<IdentityUser>();
         }
     }
 }
